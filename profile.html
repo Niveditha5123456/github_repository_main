@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Profile</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="profile.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+<div class="sidebar">
+
+<h2>⚡ RepoAI</h2>
+
+<ul>
+
+<li onclick="window.location.href='dashboard.html'">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</li>
+
+<li onclick="window.location.href='dashboard.html'">
+<i class="fa-brands fa-github"></i>
+Analysis
+</li>
+
+<li onclick="window.location.href='report.html'">
+<i class="fa-solid fa-chart-column"></i>
+Reports
+</li>
+
+<li onclick="window.location.href='history.html'">
+<i class="fa-solid fa-clock-rotate-left"></i>
+History
+</li>
+
+<li class="active">
+<i class="fa-solid fa-user"></i>
+Profile
+</li>
+
+<li onclick="logout()">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+<div class="main">
+
+<div class="topbar">
+<h1>My Profile</h1>
+</div>
+
+<div class="pf-card">
+
+<!-- Compact header: small photo + name/email side by side -->
+<div class="pf-header">
+
+<div class="pf-avatar-wrap">
+<img id="profilePhoto" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile photo">
+<label for="photoUpload" class="pf-avatar-edit-badge" title="Change photo">
+<i class="fa-solid fa-camera"></i>
+</label>
+<input type="file" id="photoUpload" accept="image/*" hidden>
+</div>
+
+<div class="pf-header-text">
+<h2 id="headerName">Loading...</h2>
+<p id="headerEmail">-</p>
+</div>
+
+<button type="button" id="editToggleBtn" class="pf-edit-btn">
+<i class="fa-solid fa-pen"></i> Edit Profile
+</button>
+
+</div>
+
+<!-- Body: view mode by default, becomes editable in edit mode -->
+<form id="profileForm" class="pf-body">
+
+<div class="pf-field-row">
+<label><i class="fa-solid fa-user"></i> Full Name</label>
+<span class="pf-view-value" id="view-displayName">-</span>
+<input type="text" id="displayName" class="pf-edit-value" placeholder="Your name">
+</div>
+
+<div class="pf-field-row">
+<label><i class="fa-solid fa-envelope"></i> Email</label>
+<span class="pf-view-value" id="view-email">-</span>
+<input type="email" id="email" class="pf-edit-value" disabled>
+</div>
+
+<div class="pf-field-row">
+<label><i class="fa-brands fa-github"></i> GitHub Username</label>
+<span class="pf-view-value" id="view-githubUsername">-</span>
+<input type="text" id="githubUsername" class="pf-edit-value" placeholder="your-github-username">
+</div>
+
+<div class="pf-field-row">
+<label><i class="fa-solid fa-location-dot"></i> Location</label>
+<span class="pf-view-value" id="view-location">-</span>
+<input type="text" id="location" class="pf-edit-value" placeholder="City, Country">
+</div>
+
+<div class="pf-field-row">
+<label><i class="fa-solid fa-pen-nib"></i> Bio</label>
+<span class="pf-view-value" id="view-bio">-</span>
+<textarea id="bio" class="pf-edit-value" placeholder="Tell us a little about yourself" rows="3"></textarea>
+</div>
+
+<div class="pf-form-actions" id="formActions">
+<button type="submit" id="saveBtn" class="pf-save-btn">
+<i class="fa-solid fa-check"></i> Save Changes
+</button>
+<button type="button" id="cancelBtn" class="pf-cancel-btn">
+Cancel
+</button>
+<span id="saveStatus" class="pf-save-status"></span>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="profile.js"></script>
+
+</body>
+
+</html>

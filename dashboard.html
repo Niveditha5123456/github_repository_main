@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Repo AI Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>⚡ RepoAI</h2>
+
+<ul>
+
+<li class="active">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</li>
+
+<li
+onclick="goToAnalysis()">
+<i class="fa-brands fa-github"></i>
+Analysis
+</li>
+
+<li
+onclick="window.location.href='report.html'">
+<i class="fa-solid fa-chart-column"></i>
+Reports
+</li>
+
+<li
+onclick="window.location.href='history.html'">
+<i class="fa-solid fa-clock-rotate-left"></i>
+History
+</li>
+
+<li
+onclick="window.location.href='profile.html'">
+<i class="fa-solid fa-user"></i>
+Profile
+</li>
+
+<!-- EDIT 1: added onclick="logout()" here -->
+<li onclick="logout()">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="topbar">
+
+<h1>Welcome Back 👋</h1>
+
+<div class="github-logo">
+    <img src="https://i.postimg.cc/qqzfgWRr/25231.png" alt="GitHub">
+</div>
+
+</div>
+
+<!-- Search -->
+
+<div class="repo-box">
+
+<h2>Analyze GitHub Repository</h2>
+
+<input
+type="text"
+id="repoUrl"
+placeholder="Paste GitHub Repository URL">
+
+<button onclick="fetchRepository()">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Analyze Repository
+
+</button>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="stats">
+
+<div class="card">
+
+<h3>Repository Name</h3>
+
+<h1 id="repoName">-</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Owner</h3>
+
+<h1 id="owner">-</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Language</h3>
+
+<h1 id="language">-</h1>
+
+</div>
+
+<div class="card">
+
+<h3>License</h3>
+
+<h1 id="license">-</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Stars</h3>
+
+<h1 id="stars">-</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Forks</h3>
+
+<h1 id="forks">-</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Open Issues</h3>
+
+<h1 id="issues">-</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Description</h3>
+
+<h1 id="description">-</h1>
+
+</div>
+
+</div>
+
+<!-- AI -->
+
+<div class="ai-box">
+
+<h2>🤖 AI Recommendations</h2>
+
+<ul id="aiRecommendations"></ul>
+
+</div>
+
+<!-- Recent -->
+
+<div class="recent">
+
+<h2>Recent Analysis</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Repository</th>
+
+<th>Score</th>
+
+<th>Status</th>
+
+</tr>
+</thead>
+
+
+<tbody id="recentTable">
+<tr>
+<td>RepoAI</td>
+
+<td>92%</td>
+
+<td>Excellent</td>
+
+</tr>
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- EDIT 2: new script block added here, BEFORE github.js -->
+<script type="module">
+  import { auth } from "./firebase.js";
+  import { signOut } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+  window.logout = async function () {
+    try {
+      await signOut(auth);
+      window.location.href = "login.html";
+    } catch (error) {
+      console.error("Error logging out:", error);
+      alert("Something went wrong while logging out.");
+    }
+  };
+</script>
+
+<script src="github.js"></script>
+
+</body>
+
+</html>

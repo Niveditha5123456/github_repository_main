@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Repository Report</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="report-container" id="report">
+
+<!-- Header -->
+
+<div class="report-header">
+
+<h1>
+AI Repository Report
+</h1>
+
+<a href="analysis.html" class="back-btn">
+<i class="fa-solid fa-arrow-left"></i>
+Back
+</a>
+
+</div>
+
+<!-- Repository Information -->
+
+<div class="report-card">
+
+<h2>
+<i class="fa-brands fa-github"></i>
+Repository Information
+</h2>
+
+<div class="repo-info">
+
+<p><b>Repository :</b> <span id="repoName"></span></p>
+
+<p><b>Owner :</b> <span id="owner"></span></p>
+
+<p><b>Language :</b> <span id="language"></span></p>
+
+<p><b>Stars :</b> <span id="stars"></span></p>
+
+<p><b>Forks :</b> <span id="forks"></span></p>
+
+<p><b>License :</b> <span id="license"></span></p>
+
+</div>
+
+</div>
+
+<!-- Health Score -->
+
+<div class="report-card">
+
+<h2>
+Overall Health Score
+</h2>
+
+<div class="health-box">
+
+<div class="big-score" id="score"></div>
+
+<div>
+
+<h3 id="status"></h3>
+
+<p>
+
+This repository follows good software engineering practices and is suitable for open-source collaboration.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Charts -->
+
+<div class="chart-grid">
+
+<div class="chart-card">
+
+<h2>Repository Quality</h2>
+
+<canvas id="qualityChart"></canvas>
+
+</div>
+
+<div class="chart-card">
+
+<h2>Issue Distribution</h2>
+
+<canvas id="issueChart"></canvas>
+
+</div>
+
+</div>
+
+<!-- README -->
+
+<div class="report-card">
+
+<h2>
+
+README Analysis
+
+</h2>
+
+<p id="readme"></p>
+
+</div>
+
+<!-- Missing -->
+
+<div class="report-card">
+
+<h2>
+
+Missing Files
+
+</h2>
+
+<ul id="missing"></ul>
+</div>
+
+<!-- Security -->
+
+<div class="report-card">
+
+<h2>
+
+Security Analysis
+
+</h2>
+
+<p id="security"></p>
+
+</div>
+
+<!-- AI -->
+
+<div class="report-card">
+
+<h2>
+
+AI Recommendations
+
+</h2>
+
+<ul id="suggestions"></ul>
+
+</div>
+
+<!-- Buttons -->
+
+<div class="report-buttons">
+
+<button class="download-btn" onclick="downloadReport()">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+Download PDF
+
+</button>
+
+<button id="shareBtn" class="share-btn">
+    <i class="fa-solid fa-share-nodes"></i>
+    Share Report
+</button>
+   
+
+<button class="analyze-btn">
+
+Analyze Another Repository
+
+</button>
+
+</div>
+
+</div>
+
+
+<script src="report.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</body>
+
+</html>

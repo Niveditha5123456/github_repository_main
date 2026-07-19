@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register | RepoAI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="register-container">
+
+<div class="register-card">
+
+<div class="logo">
+⚡ RepoAI
+</div>
+
+<h1>Create Account</h1>
+
+<p>Create your RepoAI account to start analyzing GitHub repositories.</p>
+
+<form id="registerForm">
+
+<div class="input-box">
+
+<i class="fa-solid fa-user"></i>
+
+<input
+type="text"
+id="name"
+name="name"
+placeholder="Full Name"
+required>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<input
+type="email"
+id="email"
+name="email"
+placeholder="Email Address"
+required>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-brands fa-github"></i>
+
+<input
+type="text"
+id="githubUsername"
+name="githubUsername"
+placeholder="GitHub Username (optional)">
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<input
+type="text"
+id="location"
+name="location"
+placeholder="Location (optional)">
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-pen"></i>
+
+<input
+type="text"
+id="bio"
+name="bio"
+placeholder="Short bio (optional)">
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="password"
+name="password"
+placeholder="Password"
+required>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="confirmPassword"
+name="confirmPassword"
+placeholder="Confirm Password"
+required>
+
+</div>
+
+<button type="submit" class="register-button">
+
+Create Account
+
+</button>
+
+</form>
+
+<div class="divider">
+
+OR
+
+</div>
+
+<button class="github-button">
+
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
+
+Continue with GitHub
+
+</button>
+
+<p class="login-link">
+
+Already have an account?
+
+<a href="login.html">
+
+Login
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+<script type="module" src="auth.js"></script>
+</body>
+
+</html>

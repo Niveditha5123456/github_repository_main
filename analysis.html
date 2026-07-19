@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Repository Analysis</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="analysis-container">
+
+<div class="analysis-header">
+
+<h1>Repository Analysis</h1>
+
+<a href="dashboard.html" class="back-btn">
+<i class="fa-solid fa-arrow-left"></i>
+Dashboard
+</a>
+
+</div>
+
+<!-- Repository Details -->
+
+<div class="repo-details">
+
+<div class="repo-left">
+
+<h2 id="repoName">Loading...</h2>
+
+<p>Owner : <b id="owner"></b></p>
+
+<p>Language : <b id="language"></b></p>
+
+<p>Stars : <b id="stars"></b></p>
+
+<p>Forks : <b id="forks"></b></p>
+
+
+
+</div>
+
+<div class="repo-right">
+
+<button class="analyze-btn" onclick="runAIAnalysis()">
+
+<i class="fa-solid fa-robot"></i>
+
+Run AI Analysis
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Score -->
+
+<div class="score-section">
+
+<div class="score-card">
+
+<h2>Health Score</h2>
+
+<div class="circle" id="healthScore">
+0%
+</div>
+
+</div>
+
+<div class="score-card">
+
+<h2>Repository Status</h2>
+
+<h1 class="excellent" id="repoStatus">
+Waiting...
+</h1>
+
+</div>
+
+</div>
+
+<!-- Analysis Cards -->
+
+<div class="analysis-grid">
+
+<div class="analysis-card">
+
+<h3>
+
+<i class="fa-solid fa-book"></i>
+
+README Analysis
+
+</h3>
+
+<p id="readmeAnalysis"></p>
+
+</div>
+
+<div class="analysis-card">
+
+<h3>
+
+<i class="fa-solid fa-folder-tree"></i>
+
+Project Structure
+
+</h3>
+
+<p id="projectStructure"></p>
+
+</div>
+
+<div class="analysis-card">
+
+<h3>
+
+<i class="fa-solid fa-file-circle-xmark"></i>
+
+Missing Files
+
+</h3>
+
+<p id="missingFiles"></p>
+
+</div>
+
+<div class="analysis-card">
+
+<h3>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Security
+
+</h3>
+
+<p id="security"></p>
+</div>
+
+<div class="analysis-card">
+
+<h3>
+
+<i class="fa-solid fa-code"></i>
+
+Code Quality
+
+</h3>
+
+<p id="codeQuality"></p>
+</div>
+
+<div class="analysis-card">
+
+<h3>
+
+<i class="fa-solid fa-lightbulb"></i>
+
+AI Suggestions
+
+</h3>
+
+<ul id="aiSuggestions"></ul>
+
+</div>
+
+</div>
+
+<!-- Loading -->
+
+<div class="loading-box">
+
+<div class="loader"></div>
+
+<p>
+
+AI is analyzing repository...
+
+</p>
+
+</div>
+
+<!-- Buttons -->
+
+<div class="report-buttons">
+
+<button class="download-btn" id="viewReportBtn" onclick="window.location.href='report.html'" disabled style="opacity: 0.5; cursor: not-allowed;">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+View Full Report
+
+</button>
+
+</div>
+
+</div>
+<script src="analysis.js"></script>
+</body>
+
+</html>

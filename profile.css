@@ -1,0 +1,248 @@
+.pf-card {
+    background: #171717;
+    border-radius: 20px;
+    max-width: 640px;
+    margin: 24px auto 0;
+    box-shadow: 0 0 18px rgba(247, 183, 49, .12);
+    overflow: hidden;
+}
+
+/* ---------- Header ---------- */
+
+.pf-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 28px;
+    border-bottom: 1px solid #262626;
+}
+
+.pf-avatar-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.pf-avatar-wrap img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f7b731;
+}
+
+.pf-avatar-edit-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background: #f7b731;
+    color: #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+    border: 2px solid #171717;
+    transition: transform 0.15s;
+}
+
+.pf-avatar-edit-badge:hover {
+    transform: scale(1.1);
+}
+
+.pf-header-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.pf-header-text h2 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pf-header-text p {
+    font-size: 13px;
+    color: #999;
+    margin: 2px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pf-edit-btn {
+    flex-shrink: 0;
+    background: transparent;
+    color: #f7b731;
+    border: 1.5px solid #f7b731;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.15s, color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.pf-edit-btn:hover {
+    background: #f7b731;
+    color: #000;
+}
+
+.pf-edit-btn.is-editing {
+    background: #262626;
+    color: #ccc;
+    border-color: #262626;
+}
+
+/* ---------- Body / fields ---------- */
+
+.pf-body {
+    padding: 20px 28px 28px;
+}
+
+.pf-field-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #222;
+}
+
+.pf-field-row:last-of-type {
+    border-bottom: none;
+}
+
+.pf-field-row label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 2px;
+}
+
+.pf-field-row label i {
+    color: #f7b731;
+    width: 14px;
+    text-align: center;
+}
+
+.pf-view-value {
+    font-size: 14px;
+    color: #eee;
+    padding-top: 2px;
+    word-break: break-word;
+}
+
+/* Edit inputs hidden by default (view mode) */
+.pf-edit-value {
+    display: none;
+    padding: 8px 12px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #0b0b0b;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.pf-edit-value:focus {
+    border-color: #f7b731;
+}
+
+.pf-edit-value:disabled {
+    background: #171717;
+    color: #777;
+    cursor: not-allowed;
+}
+
+/* Editing mode */
+.pf-card.pf-editing .pf-view-value {
+    display: none;
+}
+
+.pf-card.pf-editing .pf-edit-value {
+    display: block;
+}
+
+/* ---------- Actions (only visible while editing) ---------- */
+
+.pf-form-actions {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.pf-card.pf-editing .pf-form-actions {
+    display: flex;
+}
+
+.pf-save-btn,
+.pf-cancel-btn {
+    border: none;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: opacity 0.2s, background 0.2s;
+}
+
+.pf-save-btn {
+    background: #f7b731;
+    color: #000;
+}
+
+.pf-save-btn:hover {
+    box-shadow: 0 0 15px rgba(247, 183, 49, .4);
+}
+
+.pf-cancel-btn {
+    background: #262626;
+    color: #ccc;
+}
+
+.pf-cancel-btn:hover {
+    background: #333;
+}
+
+.pf-save-status {
+    font-size: 13px;
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 520px) {
+    .pf-field-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .pf-header {
+        flex-wrap: wrap;
+    }
+
+    .pf-edit-btn {
+        margin-left: auto;
+    }
+}

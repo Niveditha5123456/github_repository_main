@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Analysis History</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="history-container">
+
+<div class="history-header">
+
+<h1>
+<i class="fa-solid fa-clock-rotate-left"></i>
+Analysis History
+</h1>
+
+<a href="dashboard.html" class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Dashboard
+
+</a>
+
+</div>
+
+<div class="search-history">
+
+<input type="text"
+id="searchInput"
+placeholder="Search repository...">
+
+<button id="searchBtn">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Search
+
+</button>
+
+</div>
+
+<div class="history-table">
+
+<table id="historyTable">
+<thead>
+<tr>
+
+<th>Repository</th>
+
+<th>Health Score</th>
+
+<th>Date</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+</thead>
+
+<tbody id="historyTableBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="history-summary">
+
+<div class="summary-card">
+
+<h2>Repositories Analyzed</h2>
+
+<h1 id="totalRepos">0</h1>
+
+</div>
+
+<div class="summary-card">
+
+<h2>Average Score</h2>
+
+<h1 id="averageScore">0%</h1>
+
+</div>
+
+<div class="summary-card">
+
+<h2>Highest Score</h2>
+
+<h1 id="highestScore">0%</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="history.js"></script>
+
+</body>
+
+</html>
